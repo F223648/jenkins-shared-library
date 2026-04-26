@@ -3,7 +3,7 @@ def call(Map config) {
         error "runSonarScan: 'projectKey' parameter is required."
     }
     
-    script.echo "Running SonarQube Scanner for ${config.projectKey}"
+    echo "Running SonarQube Scanner for ${config.projectKey}"
     // withSonarQubeEnv expects a configured SonarQube Server in Jenkins
     withSonarQubeEnv('sonar-server') {
         sh """
